@@ -40,11 +40,12 @@
     UIViewController *viewController2 = [[[ZTSecondViewController alloc] initWithNibName:@"ZTSecondViewController" bundle:nil] autorelease];
     self.tabBarController = [[[UITabBarController alloc] init] autorelease];
     self.tabBarController.viewControllers = [NSArray arrayWithObjects:viewController1, viewController2, nil];
+    self.tabBarController.delegate = self;
     
     // initialize our login controller which will hide the tabBarController
     self.loginViewController = [[[ZTLoginViewController alloc] initWithNibName:@"ZTLoginViewController" bundle:nil] autorelease];
     // make sure we get messages about login status
-    self.loginViewController.delegate = self; 
+    self.loginViewController.delegate = self;
     
     // make tab bar controller root, make window key, but don't show it yet
     self.window.rootViewController = self.tabBarController;
@@ -101,12 +102,7 @@
 
 - (void)_showAppView:(BOOL)animated
 {
-    if ([[self loginViewController] respondsToSelector:@selector(presentingViewController)]) {
-        [[[self loginViewController] presentingViewController] dismissModalViewControllerAnimated: animated];
-    }
-    else {
-        [[[self window] rootViewController] dismissModalViewControllerAnimated: animated];
-    }
+    [[self tabBarController] dismissModalViewControllerAnimated: animated];
 }
 
 - (void)_hideAppView:(BOOL)animated
@@ -122,12 +118,13 @@
     [self _showAppView:YES];
 }
 
-/*
-// Optional UITabBarControllerDelegate method.
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
-{
-}
-*/
+//// Optional UITabBarControllerDelegate method.
+//- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+//{
+//    NSLog(@"delegate message, calling controller's viewWill/DidAppear methods...");
+//    [viewController viewWillAppear:NO];
+//    [viewController viewDidAppear:NO];
+//}
 
 /*
 // Optional UITabBarControllerDelegate method.

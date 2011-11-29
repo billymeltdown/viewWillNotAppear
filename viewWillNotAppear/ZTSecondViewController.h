@@ -10,7 +10,7 @@
 
 @interface ZTSecondViewController : UIViewController
 
-@property (nonatomic,strong) IBOutlet UILabel *label;
-@property (nonatomic,strong) IBOutlet UITextView *textView;
+@property (nonatomic,retain) IBOutlet UILabel *label;
+@property (nonatomic,retain) IBOutlet UITextView *textView;
 
 @end

@@ -12,10 +12,10 @@
 @interface ZTAppDelegate : UIResponder 
 <UIApplicationDelegate, UITabBarControllerDelegate, ZTLoginViewControllerDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+@property (retain, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) UITabBarController *tabBarController;
+@property (retain, nonatomic) UITabBarController *tabBarController;
 
-@property (strong, nonatomic) ZTLoginViewController *loginViewController;
+@property (retain, nonatomic) ZTLoginViewController *loginViewController;
 
 @end

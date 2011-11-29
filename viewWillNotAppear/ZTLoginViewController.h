@@ -17,7 +17,7 @@
 
 @interface ZTLoginViewController : UIViewController
 
-@property (nonatomic,strong) IBOutlet UIButton *button;
+@property (nonatomic,retain) IBOutlet UIButton *button;
 @property (nonatomic,assign) id<ZTLoginViewControllerDelegate> delegate;
 
 - (IBAction)login:(id)sender;
