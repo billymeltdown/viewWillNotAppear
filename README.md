@@ -1,6 +1,6 @@
 # viewWillNotAppear
 
-This is a test project created at [Zetetic](http://zetetic.net) to demonstrate a problem we've found using iOS 5 that is either a bug, or unintended use of the frameworks. We've two shipping apps, Codebook and Strip, that protect an "app view controller" with a "login view controller", which is presented modally. We've been doing this since iOS 3 and have only had to make minor adjustments along the way.
+This is a test project created at [Zetetic](http://zetetic.net) to demonstrate a problem we've found using iOS 5 that is either a bug, or unintended use of the frameworks. We've two shipping apps, [Codebook](http://getcodebook.com) and [Strip](http://getstrip.com), that protect an "app view controller" with a "login view controller", which is presented modally. We've been doing this since iOS 3 and have only had to make minor adjustments along the way.
 
 ## Demonstrating the bug
 
@@ -27,7 +27,8 @@ It seems to be that a race-condition is induced because we use dismissModalViewC
 
 [This is the work-around commit that first fixed the problem for us](https://github.com/billymeltdown/viewWillNotAppear/commit/eed676758f84b32ec6f148e1dfd3a32a80b9d7d3).
 
-Since then the code has changed a bit in the sample app, but the master branch remains the work-around demonstration. To see it in action, check out the master branch and repeat the steps above.
+We're simply hiding the app view controller and not presenting the login view controller until become active. It's a good solution, but it doesn't quite feel clean.
+
+The master branch remains the work-around demonstration. To see the fix in action, check out the master branch and repeat the steps above.
 
     $ git checkout master
-  
