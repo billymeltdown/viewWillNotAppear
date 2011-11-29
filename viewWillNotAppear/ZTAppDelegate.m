@@ -12,6 +12,8 @@
 
 #import "ZTSecondViewController.h"
 
+#import <QuartzCore/CATransaction.h>
+
 @interface ZTAppDelegate (Private)
 - (void)_showAppView:(BOOL)animated;
 - (void)_hideAppView:(BOOL)animated;
