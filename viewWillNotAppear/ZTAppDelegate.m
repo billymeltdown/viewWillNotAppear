@@ -12,6 +12,8 @@
 
 #import "ZTSecondViewController.h"
 
+#import <QuartzCore/CATransaction.h>
+
 @interface ZTAppDelegate (Private)
 - (void)_showAppView:(BOOL)animated;
 - (void)_hideAppView:(BOOL)animated;
@@ -102,8 +104,9 @@
 
 - (void)_showAppView:(BOOL)animated
 {
-    //[[self tabBarController] dismissModalViewControllerAnimated: animated];
-    [[self tabBarController] dismissViewControllerAnimated: animated completion:NULL];
+    //[[self tabBarController] dismissModalViewControllerAnimated:animated];
+    [[self tabBarController] dismissViewControllerAnimated:animated completion:NULL];
+    [CATransaction flush];
 }
 
 - (void)_hideAppView:(BOOL)animated

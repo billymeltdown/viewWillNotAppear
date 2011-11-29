@@ -24,6 +24,7 @@
 		28B8CAF41484062B00FC6177 /* ZTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28B8CAF21484062A00FC6177 /* ZTLoginViewController.m */; };
 		28B8CAF51484062B00FC6177 /* ZTLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28B8CAF31484062B00FC6177 /* ZTLoginViewController.xib */; };
 		28B8CAF7148406A300FC6177 /* its_a_secret_to_everybody.png in Resources */ = {isa = PBXBuildFile; fileRef = 28B8CAF6148406A300FC6177 /* its_a_secret_to_everybody.png */; };
+		28B8CB2714852E1700FC6177 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28B8CB2614852E1700FC6177 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		28B8CAF21484062A00FC6177 /* ZTLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZTLoginViewController.m; sourceTree = "<group>"; };
 		28B8CAF31484062B00FC6177 /* ZTLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZTLoginViewController.xib; sourceTree = "<group>"; };
 		28B8CAF6148406A300FC6177 /* its_a_secret_to_everybody.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = its_a_secret_to_everybody.png; sourceTree = "<group>"; };
+		28B8CB2614852E1700FC6177 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +60,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28B8CACB148403CE00FC6177 /* CoreGraphics.framework in Frameworks */,
+				28B8CB2714852E1700FC6177 /* QuartzCore.framework in Frameworks */,
 				28B8CAC7148403CE00FC6177 /* UIKit.framework in Frameworks */,
 				28B8CAC9148403CE00FC6177 /* Foundation.framework in Frameworks */,
-				28B8CACB148403CE00FC6177 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +73,7 @@
 		28B8CAB7148403CE00FC6177 = {
 			isa = PBXGroup;
 			children = (
+				28B8CB2614852E1700FC6177 /* QuartzCore.framework */,
 				28B8CACC148403CE00FC6177 /* viewWillNotAppear */,
 				28B8CAC5148403CE00FC6177 /* Frameworks */,
 				28B8CAC3148403CE00FC6177 /* Products */,
