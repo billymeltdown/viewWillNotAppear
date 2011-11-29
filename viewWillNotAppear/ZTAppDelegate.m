@@ -102,13 +102,17 @@
 
 - (void)_showAppView:(BOOL)animated
 {
-    [[self tabBarController] dismissModalViewControllerAnimated: animated];
+    //[[self tabBarController] dismissModalViewControllerAnimated: animated];
+    [[self tabBarController] dismissViewControllerAnimated: animated completion:NULL];
 }
 
 - (void)_hideAppView:(BOOL)animated
 {
     NSLog(@"hiding the app view and presenting the login view...");
-    [[self tabBarController] presentModalViewController:self.loginViewController animated:animated];
+    // [[self tabBarController] presentModalViewController: self.loginViewController animated:animated];
+    [[self tabBarController] presentViewController: self.loginViewController 
+                                          animated:animated 
+                                        completion:NULL];
 }
 
 #pragma mark - ZTLoginViewControllerDelegate
