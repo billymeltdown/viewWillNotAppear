@@ -51,10 +51,8 @@
     
     // make tab bar controller root, make window key, but don't show it yet
     self.window.rootViewController = self.tabBarController;
-    [self.window becomeKeyWindow]; // allow presentModal to work
     
-    // reveal the application window now that we're all set
-    [self.window setHidden:NO];
+    [self.window makeKeyAndVisible];
     
     self.tabBarController.view.hidden = YES;
     
