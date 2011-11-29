@@ -21,7 +21,7 @@ The master branch on this project already has our work-around integrated, so you
 ### 8. The revealed app view may appear blank or a black color, is not redrawn
 ### It doesn't always demonstrate, but more often than not in our testing
 
-It seems to be that a race-condition is induced because we use dismissModalViewController on resign active (same problem with dismissViewController, tried that, too), and is trigger by the memory warning. This would explain why it happens sometimes and not others. 
+It seems to be that a race-condition is induced because we use presentModalViewController (or newer presentViewController) on resign active (same problem with dismissViewController, tried that, too), and is triggered by the memory warning when it is resuming active. This would explain why it happens sometimes and not others. Perhaps the original presentation animation isn't finished by the time the dismiss is being kicked-off?
 
 ## The Work-Around
 
