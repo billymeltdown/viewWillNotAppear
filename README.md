@@ -1,6 +1,8 @@
 # viewWillNotAppear
 
-This is a test project created at [Zetetic](http://zetetic.net) to demonstrate a problem we've found using iOS 5 that is either a bug, or unintended use of the frameworks. We've two shipping apps, [Codebook](http://getcodebook.com) and [Strip](http://getstrip.com), that protect an "app view controller" with a "login view controller", which is presented modally. We've been doing this since iOS 3 and have only had to make minor adjustments along the way.
+This is a test project created at [Zetetic](http://zetetic.net) to demonstrate a problem we've found using iOS 5 that is either a bug, or unintended use of the frameworks. We've two shipping apps, [Codebook](http://getcodebook.com) and [Strip](http://getstrip.com), that protect an "app view controller" with a "login view controller", which is presented modally at start-up and on resign active. After the app resumes active and the user logs in again, the login view is dismissed modally, revealing the app view behind it. We've been doing this since iOS 3 and have only had to make minor adjustments along the way, works pretty well. Looks better when not animated, but that's a bit beside the point. We've been doing this since iOS 3 and have only had to make minor adjustments along the way.
+
+This works in iOS 5 unless the app receives a memory warning while it is backgrounded. When the app resumes all looks well, but after the user logs in and we dismiss the login view controller, we find that sometimes the view revealed behind it is not being drawn on screen at all.
 
 ## Demonstrating the bug
 
