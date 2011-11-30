@@ -24,6 +24,16 @@
 @synthesize window = _window;
 @synthesize tabBarController = _tabBarController;
 @synthesize loginViewController = _loginViewController;
+@synthesize isLoginViewShowing = _isLoginViewShowing;
+
+- (id)init
+{
+	if (self = [super init])
+	{
+		_isLoginViewShowing = NO;
+	}
+	return self;
+}
 
 - (void)dealloc
 {
@@ -88,7 +98,8 @@
     /*
      Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
      */
-    [self _hideAppView:NO];
+    if (! _isLoginViewShowing)
+        [self _hideAppView:NO];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -105,6 +116,7 @@
     //[[self tabBarController] dismissModalViewControllerAnimated: animated];
     [[self tabBarController] dismissViewControllerAnimated: animated completion:NULL];
     self.tabBarController.view.hidden = NO;
+    self.isLoginViewShowing = NO;
 }
 
 - (void)_hideAppView:(BOOL)animated
@@ -114,6 +126,7 @@
     [[self tabBarController] presentViewController: self.loginViewController 
                                           animated:animated 
                                         completion:NULL];
+    self.isLoginViewShowing = YES;
 }
 
 #pragma mark - ZTLoginViewControllerDelegate

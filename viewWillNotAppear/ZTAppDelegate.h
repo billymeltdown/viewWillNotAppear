@@ -18,4 +18,6 @@
 
 @property (retain, nonatomic) ZTLoginViewController *loginViewController;
 
+@property (nonatomic) BOOL isLoginViewShowing;
+
 @end
